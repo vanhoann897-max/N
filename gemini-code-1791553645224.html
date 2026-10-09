@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>A Little Secret</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            /* Đặt ảnh Hello Kitty làm hình nền, phủ kín màn hình */
+            background: url('hellokitty.jfif') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            color: #fff;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.75); /* Kính mờ màu hồng trắng để nổi bật trên nền */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 182, 193, 0.8);
+            padding: 40px 60px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(255, 105, 180, 0.25);
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+            background: rgba(255, 255, 255, 0.85);
+        }
+
+        .hint {
+            font-size: 15px;
+            letter-spacing: 1px;
+            color: #d81b60; /* Màu hồng đậm cho dễ đọc */
+            margin: 0;
+            font-weight: 600;
+        }
+
+        #message {
+            font-size: 26px;
+            font-weight: 600;
+            color: #ad1457;
+            margin-top: 15px;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+            letter-spacing: 2px;
+        }
+
+        .show {
+            opacity: 1 !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card" onclick="reveal()">
+        <p class="hint">Chạm vào đây để xem điều bất ngờ...</p>
+        <div id="message">i love N</div>
+    </div>
+
+    <script>
+        function reveal() {
+            const msg = document.getElementById('message');
+            msg.classList.toggle('show');
+        }
+    </script>
+
+</body>
+</html>
